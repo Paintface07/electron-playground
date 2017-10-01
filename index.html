@@ -3,16 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World!</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="./main.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo center">electron-playground</a>
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="#">Navbar Link</a></li>
+          <li><a href="#">Navbar Link</a></li>
+          <li><a href="#">Navbar Link</a></li>
+          <li><a href="#">Navbar Link</a></li>
+          <li><a id="exit-button">Exit</a></li>
+        </ul>
+        <a data-activates="nav-mobile" class="button-collapse show-on-large material-icons"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <ul class="card-list"></ul>
+    </div>
 
     <script>
-      require('./renderer.js');
+      require('jquery');
+      require('hammerjs');
+      require('materialize-css');
+      require('./main.renderer.js');
     </script>
   </body>
 </html>
