@@ -28,7 +28,7 @@ function createMainWindow() {
     }));
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
 
     const mainMenu = Menu.buildFromTemplate(AppMenus.MAIN_MENU);
     Menu.setApplicationMenu(mainMenu);
