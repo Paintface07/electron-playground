@@ -22,3 +22,12 @@ p {
 .icon-block .material-icons {
     font-size: inherit;
 }
+
+.card .card-content .card-title.app-card {
+    font-size: 12px;
+}
+
+.centered-card {
+    display: block;
+    margin: auto;
+}
