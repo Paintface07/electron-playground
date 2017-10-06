@@ -1,5 +1,8 @@
 const electron = require('electron');
-const helpers = require('./src/html.helpers')();
+// const helpers = require('./src/html.helpers')();
+const Element = require('./src/element.helpers');
+const PageIterator = require('./src/pagination/pageIterator.renderer');
+const PageNumber = require('./src/pagination/pageNumber.renderer');
 const CardRow = require('./src/cards/cardRow.renderer');
 const { ipcRenderer } = electron;
 
@@ -16,27 +19,19 @@ document.querySelector('#exit-button').addEventListener('click', (e) => {
     ipcRenderer.send('app:quit');
 });
 
-const cardListElement = document.querySelector('.card-list');
+const cardListElement = document.querySelector('.app-content');
 
 ipcRenderer.on('app:init', (e, data) => {
     CARD_ARRAY = data;
-    const paginator = document.querySelector('.pagination');
-    const pageBackIconText = helpers.text('chevron_left');
-    const pageBackIcon = helpers.elementWithClass('i', ['material-icons']);
-    pageBackIcon.appendChild(pageBackIconText);
 
-    const pageBackIconLink = document.createElement('a');
-    pageBackIconLink.setAttribute('href', '#!');
-    pageBackIconLink.appendChild(pageBackIcon);
-
-    const pageBackListItem = helpers.elementWithClass('li', ['disabled']);
-    pageBackListItem.appendChild(pageBackIconLink);
-
-
-    const pageBack = helpers.elementWithClass('li', ['material-icons']);
-    pageBack.appendChild(pageBackListItem);
-
-    paginator.appendChild(pageBack);
+    const paginator = new Element('ul')
+        .addClass('pagination')
+        .addChild(new PageIterator('left').element)
+        .addChild(new PageNumber(1).activate().element)
+        .addChild(new PageNumber(2).element)
+        .addChild(new PageNumber(3).element)
+        .addChild(new PageIterator('right').element)
+        .element;
 
     cardListElement.appendChild(paginator);
 
