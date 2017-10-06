@@ -1,5 +1,4 @@
 const electron = require('electron');
-// const helpers = require('./src/html.helpers')();
 const Element = require('./src/element.helpers');
 const PageIterator = require('./src/pagination/pageIterator.renderer');
 const PageNumber = require('./src/pagination/pageNumber.renderer');

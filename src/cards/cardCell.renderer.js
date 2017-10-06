@@ -1,4 +1,3 @@
-const helpers = require('../html.helpers')();
 const Element = require('../element.helpers');
 const ImageThumbnail = require('./cardThumbnail.renderer');
 const ImagePreview = require('./cardModal.renderer');
