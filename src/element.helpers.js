@@ -9,12 +9,16 @@ function Element(type, id) {
         this.element.setAttribute('id', id);
     }
 
+    this.asElement = function() {
+        return this.element;
+    };
+
     this.addChild = function(child) {
         if(typeof child === 'undefined') {
             throw 'An element child MUST have a tag name!';
         }
 
-        this.element.appendChild(child);
+        this.element.appendChild(child.asElement());
         return this;
     };
 
@@ -49,6 +53,10 @@ function Element(type, id) {
         }
 
         return this;
+    };
+
+    this.onClick = function(cb) {
+        this.element.addEventListener('click', cb);
     };
 
     return this;

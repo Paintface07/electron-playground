@@ -8,9 +8,7 @@ function ImageThumbnail(cardToRender) {
         .addChild(new Element('img')
             .addClass('responsive-img')
             .setAttribute('src', 'https://image.deckbrew.com/mtg/multiverseid/'
-                + cardToRender.set[0].$.muId + '.jpg')
-            .element)
-        .element;
+                + cardToRender.set[0].$.muId + '.jpg'));
 
     // const imageLink = helpers.elementWithClass('a', ['waves-effect', 'waves-light', 'modal-trigger']);
     // imageLink.setAttribute('href', '#cardModal' + cardToRender.set[0].$.muId);

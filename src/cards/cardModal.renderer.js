@@ -8,15 +8,11 @@ function ImagePreview(cardToRender) {
             .addClass('modal-content')
             .addChild(new Element('h4')
                 .addClass('center')
-                .setText(cardToRender.name)
-                .element)
+                .setText(cardToRender.name))
             .addChild(new Element('img')
                 .addClass('centered-card')
                 .setAttribute('src', 'https://image.deckbrew.com/mtg/multiverseid/'
-                    + cardToRender.set[0].$.muId + '.jpg')
-                .element)
-            .element)
-        .element;
+                    + cardToRender.set[0].$.muId + '.jpg')));
 }
 
 module.exports = ImagePreview;

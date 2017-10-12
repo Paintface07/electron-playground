@@ -6,16 +6,19 @@ function PageNumber(number) {
         .addClass('waves-effect')
         .addChild(new Element('a')
             .setAttribute('href', '#!')
-            .setText(number)
-            .element)
-        .element;
+            .setText(number));
 
-    this.activate = function() {
+    this.element.activate = function() {
         this.element.setAttribute('class', 'active');
-        return this;
+        return this.element;
     };
 
-    return this;
+    this.element.deactivate = function() {
+        let cls = this.element.getAttribute('class');
+        this.element.setAttribute('class', cls.replace('active', ''));
+    };
+
+    return this.element;
 }
 
 module.exports = PageNumber;

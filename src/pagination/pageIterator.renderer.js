@@ -8,17 +8,14 @@ function PageIterator(direction) {
             .setAttribute('href', '#!')
             .addChild(new Element('i')
                 .addClass('material-icons')
-                .setText('chevron_' + direction)
-                .element)
-            .element)
-        .element;
+                .setText('chevron_' + direction)));
 
     this.activate = function() {
         this.element.removeClass('disabled');
-        return this;
+        return this.element;
     };
 
-    return this;
+    return this.element;
 }
 
 module.exports = PageIterator;

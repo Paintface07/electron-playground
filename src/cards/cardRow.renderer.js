@@ -10,7 +10,7 @@ function CardRow(data, startPos) {
         }
     }
 
-    return row.element;
+    return row;
 }
 
 module.exports = CardRow;

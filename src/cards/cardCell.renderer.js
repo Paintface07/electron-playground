@@ -11,13 +11,9 @@ function CardCell(cardToRender) {
                 .addChild(new Element('div')
                     .addClass('card-title')
                     .addClass('app-card')
-                    .setText(cardToRender.name)
-                    .element)
+                    .setText(cardToRender.name))
                 .addChild(new ImageThumbnail(cardToRender))
-                .addChild(new ImagePreview(cardToRender))
-                .element)
-            .element)
-        .element;
+                .addChild(new ImagePreview(cardToRender))));
 }
 
 module.exports = CardCell;
